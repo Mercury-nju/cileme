@@ -69,7 +69,7 @@ struct MainView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "person.circle")
+                        Image(systemName: "gearshape")
                     }
                 }
             }

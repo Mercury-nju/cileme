@@ -55,6 +55,16 @@ struct WordListDetailView: View {
                                 }
                             )
                             .padding(.horizontal, 20)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    withAnimation {
+                                        wordList.words.removeAll { $0.id == word.id }
+                                        saveChanges()
+                                    }
+                                } label: {
+                                    Label("删除", systemImage: "trash")
+                                }
+                            }
                         }
                     }
                     

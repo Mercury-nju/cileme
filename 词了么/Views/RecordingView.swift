@@ -113,12 +113,12 @@ struct RecordingView: View {
                                         .padding(.vertical, isDetailMode ? 30 : 40)
                                 }
                             }
-                            .onChange(of: draft.words.count) { _ in
+                            .onChange(of: draft.words.count) { _, _ in
                                 withAnimation(.spring()) {
                                     proxy.scrollTo("bottom_input", anchor: .bottom)
                                 }
                             }
-                            .onChange(of: isInputFocused) { focused in
+                            .onChange(of: isInputFocused) { _, focused in
                                 if focused {
                                     // 聚焦时也滚动到底部，防止键盘遮挡
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
